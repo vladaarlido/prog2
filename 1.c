@@ -1,7 +1,7 @@
 #include <stdio.h>
 int main()
 {
-    printf("Hello, %s!\n", "Vlada");
+    printf("My name is %s!", "Vlada");
 
     getchar();
     return 0;
