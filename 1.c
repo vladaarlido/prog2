@@ -1,18 +1,22 @@
 #include <stdio.h>
 int main()
 {
-char x[40];
-    printf("Hi, what is ur name?\n");
-    scanf("%s", &x);
-    printf("Welcome, %s!\n", x);
+char x[40]; //массив чтобы вписать имя 40 символов условно допустимое значение для имени
+    printf("Hi, what is ur name?\n"); //программа здоровается ждёт ввод букв
+    scanf("%s", &x); //считывает что за буквы и записывает в %s который является переменной x
+    printf("Welcome, %s!\n", x); //здоровается на место %s идёт переменная x значение которой мы записали выше
 
-int a;
-    printf("How old r u?\n");
-    scanf("%d", &a);
+int a;//делаем переменную a которая будет числом
+    printf("How old r u?\n"); //сколько тебе лет ждёт ввода числа
+    scanf("%d", &a);//терминал ждёт ввода числа
     
-    if (a>=18) {printf("Ur great, welcome %s!\n", x);}
-    else if (a<18) {printf("Sorry %s, ur too young!\n", x);}
+    if (a>=18 && a<110) {printf("Ur great, welcome %s!\n", x);}//если введённое нами число (пер.a) больше либо равно 18 и a меньше 110 выводим добро пожаловать
+  
+    else if (a<18 && a>=0) {printf("Sorry %s, ur too young!\n", x);}//если a меньше или равно 18 и а больше или равно 0 выводим вы слишком маленький
 
-    getchar();
+    else if (a>=110) {printf("\"ERROR\"\n Try again\n");}//если а больше или равно 110 выводим тшибку
+    else if (a<=0) {printf("\"ERROR\"\n Try again\n");}//если а меньше или равно 0 выводим ошибку
+
+    getchar();//ждёт ввода enter, просто чтобы не зависал терминал
     return 0;
 }
