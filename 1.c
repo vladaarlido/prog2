@@ -19,12 +19,18 @@ int a;//делаем переменную a которая будет число
     else if (a>=110) {printf("\"ERROR\"\n Try again\n");return 0;}//если а больше или равно 110 выводим тшибку
     else if (a<=0) {printf("\"ERROR\"\n Try again\n");return 0;}//если а меньше или равно 0 выводим ошибку
 
-char answer[3];
-    printf("Do u wanna play a math game %s? (yes\\no)\n", x);
-    scanf("%s", answer);
-    if (strcmp(answer, "yes")==0){printf("Ur welcome!\n");}
-    else if (strcmp(answer, "no")==0){printf("Fine, bye %s!\n", x);return 0;}
-    else {printf("ERROR\n");return 0;}
+char answer[3];//объявила переменную в которой будет находится слово не больше 3 символов
+    printf("Do u wanna play a math game %s? (yes\\no)\n", x);//хотят ли поиграть в игру
+    scanf("%s", answer);//счтываю ответ который запишится в переменную answer
+    if (strcmp(answer, "yes")==0){printf("Ur welcome!\n");}//если ответ да то продрлжаем
+    else if (strcmp(answer, "no")==0){printf("Fine, bye %s!\n", x);return 0;}//если ответ нет то зканчиваем диалог
+    else {printf("ERROR\n");return 0;}//если и не нет и не да то выдаём ошибку
+
+    int count = 10;
+    printf("Let's play!\nHow much will be 5+5?\n");
+    scanf("%d", &count);
+    if (count == 10){printf("Yes, ur right %s!\n", x);}
+    else {printf("ERROR\nTry again %s!", x);return 0;}
 
     getchar();//ждёт ввода enter, просто чтобы не зависал терминал
     return 0;
